@@ -22,5 +22,6 @@ print(statewise_covid_table.active)
 
 # Assignment: Show the graph by fixing the errors :)
 # Share the Matplotlib/Seaborn Snippet to draw the data on graph :)
-sns.pairplot(data=statewise_covid_table, hue="state")
+# sns.pairplot(data=statewise_covid_table, hue="state")
+# sns.catplot(data=statewise_covid_table, x="state", y="active", hue="state", kind="swarm")
 plt.show()
