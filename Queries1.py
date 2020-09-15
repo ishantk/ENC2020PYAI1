@@ -65,5 +65,16 @@ product1.show_product()
 product2.show_product()
 
 
+import re
+
+consonants = 'qwrtypsdfghjklzxcvbnm'
+vowels = 'aeiou'
+match = re.findall(r'(?<=[' + consonants + '])([' + vowels + ']{2,})(?=[' + consonants + '])', input(), flags=re.I)
+if match:
+    for i in match:
+            print(i)
+else:
+    print("nothing")
+
 
 
