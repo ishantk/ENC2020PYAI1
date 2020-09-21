@@ -18,7 +18,7 @@ print(type(image))
 print()
 
 print("IMAGE SHAPE")
-print(type(image.shape))
+print(image.shape)
 
 print("IMAGE at 0th Index")
 print(image[0])
