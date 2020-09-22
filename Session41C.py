@@ -8,6 +8,7 @@ frame_count = 0
 while True:
 
     check, frame = video.read()
+
     frame_count += 1
 
     # frame = np.rot90(frame)
@@ -15,7 +16,7 @@ while True:
     print(frame)
     cv2.imshow("MyVideoFrame {}".format(frame_count), frame)
 
-    key = cv2.waitKey(1) # 1 is 1 mili sec
+    key = cv2.waitKey(1) # 1 is 1 milli sec
 
     # for a detected change,
     # cv2.imwrite("anyanme.jpg", rotated_resized_image)
