@@ -68,7 +68,7 @@ def information_gain_in_windy():
 
 
 print("E(S):", compute_entropy_space())
-print("IG(Outlook):", information_gain_in_outlook())
-print("IG(Temperature):", information_gain_in_temperature())
-print("IG(Windy):", information_gain_in_humidity())
-print("IG(Outlook):", information_gain_in_windy())
+print("IG(Outlook):", information_gain_in_outlook())            # 0.247
+print("IG(Temperature):", information_gain_in_temperature())    # 0.029
+print("IG(Humidity):", information_gain_in_humidity())          # 0.152
+print("IG(Windy):", information_gain_in_windy())                # 0.048
