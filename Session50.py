@@ -94,7 +94,8 @@ import pandas as pd
 import numpy as np
 from sklearn import datasets
 import matplotlib.pyplot as plt
-
+from sklearn import tree
+import graphviz
 
 # boston_data_set = datasets.load_boston()
 # print(boston_data_set)
@@ -126,11 +127,16 @@ print("Model Score", model.score(X, Y))
 predicted_case = model.predict([[12], [201]])
 print(predicted_case)
 
-plt.figure(figsize=(12, 8))
-plt.scatter(X, y, color="red")
-plt.plot(X, y, color="green")
-plt.xlabel("Days")
-plt.ylabel("Cases")
-plt.show()
+# plt.figure(figsize=(12, 8))
+# plt.scatter(X, y, color="red")
+# plt.plot(X, y, color="green")
+# plt.xlabel("Days")
+# plt.ylabel("Cases")
+# plt.show()
 
 # PS: Get the DataSet populated with correct values and implement DTR :)
+
+data = tree.export_graphviz(model, out_file=None)
+graph = graphviz.Source(data)
+graph.render("COVID-19 CASES TREE")
+graph.view()
