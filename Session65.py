@@ -118,8 +118,8 @@ class ANN:
 
 
     def predict(self, X):
-       y_prediction = np.array([np.argmax(self.feed_forward(x) for x in X)], dtype=np.int)
-       return y_prediction
+        y_prediction = np.array([np.argmax(self.feed_forward(x)) for x in X], dtype=np.int)
+        return y_prediction
 
 
     def feed_forward(self, x):
@@ -284,7 +284,7 @@ def main():
 
         # Prepare DataSet to train Model based on Indexes :)
         X_train, Y_train = X[index_train], Y[index_train]
-        X_test, Y_test = Y[index_test], Y[index_test]
+        X_test, Y_test = X[index_test], Y[index_test]
 
         print("------------------")
 
