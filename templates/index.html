@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <div class="jumbotron text-center">
+
+            <h3>Welcome to MyApp</h3>
+            <p>Search the candle rather than cursing the darkness</p>
+
+        </div>
+
+        <!--get - data is sent from client to server in URL and hence is exposed-->
+        <!--post - data is sent from client to server in HTTP Body and hence is hidden-->
+
+        <form action="login" method="post">
+
+            <div class="form-group">
+              <label for="name">Name:</label>
+                <input class="form-control" type="text" name="txtEmail" placeholder="eg: john@example.com" id="name"/>
+            </div>
+
+            <div class="form-group">
+              <label for="pass">Password:</label>
+                <input class="form-control" type="password" name="txtPassword" placeholder="Min 6 characters" id="pass"/>
+            </div>
+
+            <input type="submit" value="LOGIN">
+        </form>
+
+         <br/>
+         <br/>
+
+         <a href="register">New User? Register Here</a>
+
+</body>
+</html>
