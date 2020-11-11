@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <div class="jumbotron text-center">
+
+            <h3>Welcome to MyApp</h3>
+            <p>Search the candle rather than cursing the darkness</p>
+
+        </div>
+
+        <center>
+
+            <h4>ANN MODEL HAS BEEN TRAINED SUCCESSFULLY</h4>
+            <h4>{{message}}</h4>
+
+            <h4>Enter Features for Prediction</h4>
+            <form action="predict" method="post">
+                INDEX:<input type="text" name="index" placeholder="eg: 0"/>
+                <br/>
+                <input type="submit" value="PREDICT"/>
+            </form>
+
+        </center>
+
+</body>
+</html>
