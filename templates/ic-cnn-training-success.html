@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <div class="jumbotron text-center">
+
+            <h3>Welcome to Image Classification CNN Model</h3>
+            <p>COVID-19 Chest Xray Examination</p>
+
+        </div>
+
+        <center>
+
+            <h4>ANN MODEL HAS BEEN TRAINED SUCCESSFULLY</h4>
+            <h4>{{message}}</h4>
+
+            <h4>Please upload the Image to Test</h4>
+            <form action="upload-image" method="post" enctype="multipart/form-data">
+                Choose File:<input type="file" name="image"/>
+                <br/>
+                <input type="submit" value="UPLOAD XRAY IMAGE AND PREDICT"/>
+            </form>
+
+        </center>
+
+</body>
+</html>
