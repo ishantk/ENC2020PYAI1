@@ -1,7 +1,10 @@
 """
-    CNN Model in Flask Web App
-    COVID-19 Chest XRay
+    Data Augmentation | Refer Tensorflow Documentation
+    Reference Link: https://www.tensorflow.org/tutorials/images/data_augmentation
+
+    Saving Models for Reusability
 """
+
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Flatten
@@ -13,6 +16,9 @@ import matplotlib.pyplot as plt
 
 import cv2
 import numpy as np
+
+import tensorflow as tf
+from tensorflow.keras import layers
 
 
 # STEP-1 Prepare DataSet
@@ -54,9 +60,26 @@ def plot_images(images):
 # plot_images(sample_training_images[:5])
 
 
+# Data Augmentation -> Image PreProcessing
+data_augmentation = tf.keras.Sequential([
+  layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
+  layers.experimental.preprocessing.RandomRotation(0.2),
+])
+
+# plt.figure(figsize=(10, 10))
+# for i in range(9):
+#   augmented_image = data_augmentation(sample_training_images)
+#   ax = plt.subplot(3, 3, i + 1)
+#   plt.imshow(augmented_image[0])
+#   plt.axis("off")
+#
+# plt.show()
+
 # STEP-2 Prepare and Train ANN Model
 
 model = Sequential()
+# Add Data Augmentation Layer in the first place :)
+model.add(data_augmentation)
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)))
 model.add(MaxPooling2D((2, 2)))
 
@@ -96,7 +119,19 @@ plt.plot(epochs, val_loss, label="VALIDATION LOSS")
 plt.legend(loc='upper left')
 plt.title('LOSS')
 
-# plt.show()
+plt.show()
+
+# Save the Model to Re Use it in Future without training | with extension -> .pb
+# it shall save all the weights of the neural network which can be directly used again
+model.save('covid_cnn_model')
+print("MODEL SAVED")
+
+# pip install h5py -> if you get errors
+# model.save('covid_cnn_model.h5')
+# print("MODEL SAVED in HDF Format")
+
+# Save the Model with HDF5 extension -> .h5
+
 
 # STEP-4 Make Predictions
 
@@ -111,3 +146,4 @@ image = np.reshape(image, [1, 64, 64, 3])
 predicted_class = model.predict_classes(image)
 print(predicted_class)
 print(labels[predicted_class[0][0]])
+
