@@ -29,7 +29,7 @@ class_names = {
     17: "sheep",
     18: "sofa",
     19: "train",
-    20: "tv monoitor",
+    20: "tv monitor",
 }
 
 # Load the Neural Network with OPEN CV API
@@ -44,7 +44,7 @@ while True:
 
     # Caffe Models shall read images as binary images -> BLOB (Binary Large Object) format
     # Pre Processing of Image before we feed it to the Neural Network for predictions
-    blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 1.0, (300, 300))
+    blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 0.0075, (300, 300))
 
     # Height and width of Image
     (h, w) = frame.shape[:2]
